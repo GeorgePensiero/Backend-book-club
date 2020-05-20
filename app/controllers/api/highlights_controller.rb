@@ -1,5 +1,9 @@
 class Api::HighlightsController < ApplicationController
 
+    def index
+        @highlights = Highlight.all
+    end
+
     def create
         @highlight = Highlight.new(highlight_params)
 
