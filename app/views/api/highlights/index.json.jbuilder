@@ -1,1 +1,1 @@
-json.array! @highlights, partial: "highlights/highlight", as: :highlight
+json.array! @highlights, partial: "api/highlights/highlight", as: :highlight

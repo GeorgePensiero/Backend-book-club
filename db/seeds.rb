@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+highlights = Highlight.create!([{text: 'Fresh Prince', cfi_range: 'abc'}, { text: 'Bel Air', cfi_range: 'bcd'}])
