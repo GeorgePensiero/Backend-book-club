@@ -1,5 +1,6 @@
 class Api::SessionsController < ApplicationController
-
+    skip_before_action :verify_authenticity_token
+    
     def create
         @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
         if @user
@@ -7,6 +8,18 @@ class Api::SessionsController < ApplicationController
             render "api/users/show"
         else
             render json: ['Invalid Credentials'], status: 401
+        end
+    end
+
+    def show
+        if logged_in? && current_user
+            login(current_user)
+            render json: {
+                id: current_user[:id]
+                username: current_user[:username]
+            }
+        else 
+            render json: ['Error with previous session'], status: 401
         end
     end
 
