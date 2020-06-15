@@ -15,7 +15,7 @@ class Api::SessionsController < ApplicationController
         if logged_in? && current_user
             login(current_user)
             render json: {
-                id: current_user[:id]
+                id: current_user[:id],
                 username: current_user[:username]
             }
         else 
