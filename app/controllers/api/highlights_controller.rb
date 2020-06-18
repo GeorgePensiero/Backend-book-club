@@ -36,7 +36,7 @@ class Api::HighlightsController < ApplicationController
     private
 
     def highlight_params
-        params.require(:highlight).permit(:text, :cfi_range)
+        params.require(:highlight).permit(:text, :cfi_range, :user_id, :book_id)
     end
 
 end
