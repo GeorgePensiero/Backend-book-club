@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy, :show]
     resources :highlights, only: [:create, :destroy, :update, :show, :index]
+    resources :books, only: [:create, :destroy, :update, :show, :index]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
