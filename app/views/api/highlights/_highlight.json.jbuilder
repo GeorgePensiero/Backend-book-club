@@ -1,1 +1,1 @@
-json.extract! highlight, :text, :cfi_range
+json.extract! highlight, :text, :cfi_range, :user_id
