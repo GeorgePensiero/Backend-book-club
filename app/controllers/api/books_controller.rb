@@ -1,7 +1,7 @@
 class Api::BooksController < ApplicationController
 
     def index
-        @books = Books.all
+        @books = Book.all
     end
 
     def create
@@ -14,17 +14,17 @@ class Api::BooksController < ApplicationController
     end
 
     def show
-        @book = Books.find(params[:id])
+        @book = Book.find(params[:id])
     end
 
     def destroy
-        @book = Books.find(params[:id])
+        @book = Book.find(params[:id])
         @book.destroy
         render :show
     end
 
     def update
-        @book = Books.find(params[:id])
+        @book = Book.find(params[:id])
         if @book.update(book_params)
             render :show
         else
